@@ -1,0 +1,12 @@
+{% extends 'core\base.html' %}
+{% block title %}{% endblock %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold text-center mt-10">
+        {% if request.user.is_authenticated %}
+        Welcome, {{request.user.username}}
+        {% else %}
+        You are not logged in !!
+        {% endif %}
+    </h1>
+{% endblock %}

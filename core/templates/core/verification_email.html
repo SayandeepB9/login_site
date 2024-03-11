@@ -1,0 +1,16 @@
+{% autoescape off %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Verification</title>
+</head>
+<body>
+    <h2>Hi {{ user.username }},</h2>
+    <p>Thanks for signing up with us. Please click the link below to verify your email address.</p>
+    Confirmation Link : http://{{ domain }}{% url 'core:activate' uidb64=uid token=token %}
+    <p>If you did not sign up with us, please ignore this email.</p>
+    <p>Thanks</p>
+</body>
+</html>
+{% endautoescape %}%}

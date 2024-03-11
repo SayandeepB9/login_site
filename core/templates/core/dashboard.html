@@ -1,0 +1,29 @@
+{% extends 'core\base.html' %}
+{% block title %}Dashboard | {% endblock %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold text-center mt-10">
+        Welcome, {{request.user.username}}
+    </h1>
+    <div class="flex justify-center mt-6">
+        <div class="w-1/2">
+            <h2 class="text-3xl font-bold mb-4">Dashboard</h2>
+            <table class="table-auto w-full">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2">User Id</th>
+                        <th class="px-4 py-2">Username</th>
+                        <th class="px-4 py-2">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">{{request.user.id}}</td>
+                        <td class="border px-4 py-2">{{request.user.username}}</td>
+                        <td class="border px-4 py-2">{{request.user.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
